@@ -1,9 +1,6 @@
-
----
-layout: chapter
-title: 第一章 从零到部署
----
-
+```erb
+<%= stylesheet_link_tag "application", media: "all" %>
+```
 #创建程序
 ##创建
 <pre>

@@ -388,14 +388,13 @@ header 标签的意思是放在网页顶部的内容。我们为 header 标签�
 ```erb
 <footer class="footer">
   <small>
-    <a href="http://railstutorial.org/">Rails Tutorial</a>
-    by Michael Hartl
+    <a href="http://www.bjjl.cn/zhuyet.asp?zyname=zhuyet">北京市计量检测科学研究院</a>
   </small>
   <nav>
     <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
+      <li><%= link_to "关于",   about_path %></li>
+      <li><%= link_to "联系方式", contact_path %></li>
+      <li><a href="http://www.bjjl.cn/zhuyet.asp?zyname=zhuyet">新闻</a></li>
     </ul>
   </nav>
 </footer>

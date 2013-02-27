@@ -328,7 +328,7 @@ aside {
 ##编辑 app/views/layouts/ 下文件
 
 ### application.html.erb
-<pre>
+'''erb
 <!DOCTYPE html>
 <html>
   <head>
@@ -350,7 +350,7 @@ aside {
     </div>
   </body>
 </html>
-</pre>
+'''
 ###app/helpers/application_helper.rb 
 其中，<title><%= full_title(yield(:title)) %></title>中调用了 app/helpers/application_helper.rb 
 <pre>

@@ -1,59 +1,23 @@
 
 ---
 layout: chapter
-title: 第一章 从零到部署
 ---
-```erb
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "sample app", '#', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "Help",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
-</html>
-```
 
 #创建程序
 ##创建
+<pre>
 rails new bjjl -d=mysql
-
 cd bjjl 
-
+</pre>
 ##编辑gemfile
-
 <pre>
 source 'http://ruby.taobao.org'
-
 gem 'rails', '3.2.12'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+gem 'bootstrap-will_paginate', '0.0.6' #Bootstrap
 gem 'jquery-rails', '2.0.2'
 
 group :development, :test do
@@ -80,7 +44,6 @@ end
 group :production do
   gem 'pg', '>= 0.12.2' #pg 是用来连接 PostgreSQL 数据库的，Heroku 使用这个数据库
 end
-
 </pre>
 
 <pre>
@@ -93,7 +56,6 @@ rake db:create
 <pre>
 rails generate controller StaticPages home help about contact
 </pre>
-
 ##编辑路由
 <pre>
   root to: 'static_pages#home'
@@ -106,15 +68,7 @@ rails generate controller StaticPages home help about contact
 <pre>
 rm public/index.html
 </pre>
-##Bootstrap
-###添加gem 
-<pre>
-gem 'bootstrap-sass', '2.0.4' 
-</pre>
-
-bootstrap-sass 会将 LESS 转换成 Sass 格式
-
-##自定义css
+##Bootstrap和自定义css
 
 app/assets/stylesheets,是 asset pipeline 的一部分,这个目录中的所有样式表都会自动的包含在网站的 application.css 中。
 
@@ -124,7 +78,6 @@ app/assets/stylesheets,是 asset pipeline 的一部分,这个目录中的所有�
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
@@ -408,15 +361,13 @@ end
 </pre>
 ###<%= render 'layouts/shim' %> 
 Rails 3 默认会使用 HTML5（如 <!DOCTYPE html> 所示），因为 HTML5 标准还很新，有些浏览器（特别是较旧版本的 IE 浏览器）还没有完全支持，所以我们加载了一些 JavaScript 代码（称作“HTML5 shim”）来解决这个问题：
-<pre>
+'''erb
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-
-</pre>
-
+'''
 ### <%= render 'layouts/header' %>
-<pre>
+'''erb
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -448,11 +399,11 @@ Rails 3 默认会使用 HTML5（如 <!DOCTYPE html> 所示），因为 HTML5 标
     </div>
   </div>
 </header>
-</pre>
+'''
 header 标签的意思是放在网页顶部的内容。我们为 header 标签指定了两个 CSS class3，navbar 和 navbar-fixed-top
 
 ###footer
-<pre>
+'''erb
 <footer class="footer">
   <small>
     <a href="http://railstutorial.org/">Rails Tutorial</a>
@@ -466,7 +417,7 @@ header 标签的意思是放在网页顶部的内容。我们为 header 标签�
     </ul>
   </nav>
 </footer>
-</pre>
+'''
 #mysql
 ##常用命令
 ###安装

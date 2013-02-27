@@ -399,6 +399,28 @@ header 标签的意思是放在网页顶部的内容。我们为 header 标签�
   </nav>
 </footer>
 ```
+##网页代码
+###home
+```erb
+ <div class="center market">
+    <h1 href="http://www.bjjl.cn/zhuyet.asp?zyname=zhuyet">北京市计量检测科学研究院</h1>
+    <p>
+      <a>专家信息系统</a>
+    </p>
+
+    <%= link_to "马上注册!", '#', class: "btn btn-large btn-primary" %>
+  </div>
+```
+#用户模型
+##脚手架生成
+	 <pre>
+	 rails generate scaffold User name:string email:string password_digest:string
+    rails generate scaffold Expert id_number:string name:string email:string address:string phone:string
+
+	 rake db:migrate
+	 </pre>
+##更改路由
+
 #mysql
 ##常用命令
 ###安装

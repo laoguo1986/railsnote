@@ -157,7 +157,7 @@ p {
 
 /* footer */
 
-footer {
+footjer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
@@ -318,7 +318,7 @@ aside {
 ##编辑 app/views/layouts/ 下文件
 
 ### application.html.erb
-'''erb
+```erb
 <!DOCTYPE html>
 <html>
   <head>
@@ -340,7 +340,8 @@ aside {
     </div>
   </body>
 </html>
-'''
+
+```
 ###app/helpers/application_helper.rb 
 其中，<title><%= full_title(yield(:title)) %></title>中调用了 app/helpers/application_helper.rb 
 <pre>
@@ -359,13 +360,13 @@ end
 </pre>
 ###<%= render 'layouts/shim' %> 
 Rails 3 默认会使用 HTML5（如 <!DOCTYPE html> 所示），因为 HTML5 标准还很新，有些浏览器（特别是较旧版本的 IE 浏览器）还没有完全支持，所以我们加载了一些 JavaScript 代码（称作“HTML5 shim”）来解决这个问题：
-'''erb
+```erb
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-'''
+```
 ### <%= render 'layouts/header' %>
-'''erb
+```erb
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -397,11 +398,11 @@ Rails 3 默认会使用 HTML5（如 <!DOCTYPE html> 所示），因为 HTML5 标
     </div>
   </div>
 </header>
-'''
+```
 header 标签的意思是放在网页顶部的内容。我们为 header 标签指定了两个 CSS class3，navbar 和 navbar-fixed-top
 
 ###footer
-'''erb
+```erb
 <footer class="footer">
   <small>
     <a href="http://railstutorial.org/">Rails Tutorial</a>
@@ -415,7 +416,7 @@ header 标签的意思是放在网页顶部的内容。我们为 header 标签�
     </ul>
   </nav>
 </footer>
-'''
+```
 #mysql
 ##常用命令
 ###安装
